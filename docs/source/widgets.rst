@@ -36,6 +36,7 @@ Common Parameters
 -  paddingLeft\ **:** pixel count or percent of padding position
 -  width
 -  height
+-  visible
 
 
 ActionButtonRowWidget
@@ -280,7 +281,7 @@ bar chart and a line chart.
 
 **parsingControl type:** matrix
 
-Container Widget
+ContainerWidget
 ----------------
 
 **Description:** A logical widget that allows the creation of
@@ -312,15 +313,15 @@ popup)
 -  fixed: if widget fixed (flag)
 -  position: position of the widget
 -  skin: skin of the widget
--  backdrop:
--  closeOnClickBackdrop:
--  heightFixed:
--  positionAndCalculateBestSpace:
--  fadingSpeed:
+-  backdrop: boolean if display backdrop, default false
+-  closeOnClickBackdrop: boolean, default true
+-  heightFixed: boolean, default true
+-  positionAndCalculateBestSpace: string (right, left)
+-  fadingSpeed: int, default 300
 
 **Data connection to TM1:** NO
 
-Date Picker Widget
+DatePickerWidget
 ------------------
 
 **Description:** This widget allows users to select a date
@@ -343,7 +344,7 @@ Date Picker Widget
 -  maxDate: maximal date value which can be picked by the datepicker
 -  skin\ **:** Selected skin of widget
 -  local:
--  panelFixed:
+-  panelFixed: boolean default false, datepicker will be not closed after selecting value
 
 **Data connection to TM1:**\ OPTIONAL
 
@@ -367,9 +368,9 @@ Date Picker Widget
 
 |image9|
 
-.. _section-1:
 
-Delete Button Row
+DeleteButtonRowWidget
+---------------------
 
 **Description:** A sub-widget built specifically for the
 HorizontalTableWidget. It provides delete row functionality at the end
@@ -399,15 +400,13 @@ of the rows.
 
    -  the query is part of its parent Horizontal table query
 
-      -  active
-
 -  choose query:
 -  only url, body and type settings are used, parsingControl settings is
    not available
 
-.. _section-2:
 
-Drop Box Widget
+DropBoxWidget
+-------------
 
 **Description:** This widget is used to select one single or multiple
 items at a time from a given list of items.
@@ -420,13 +419,13 @@ items at a time from a given list of items.
 
 **Config Parameters:** 
 
--  backdrop:
--  editable:
--  itemIconOff:
--  itemIconOn:
+-  backdrop: boolean, default false, whether the backdrop is displayed
+-  editable: boolean, default true
+-  itemIconOff: string, icon
+-  itemIconOn: string, icon
 -  panelWidth:
 -  placeHolder:
--  selectFirst:
+-  selectFirst: boolean, default false, if there is no selected item the first displayed as selected
 -  serverSideFilter:
 -  titleFontSize\ **:** font size of the title
 -  titleFontColor\ **:** font color of the title
@@ -461,83 +460,8 @@ items at a time from a given list of items.
    -  optional query, that will be fired every time, once an element is
       selected or deselected
 
-Droppable Widget
-----------------
-
-**Description:** 
-
-**Example:**
-
-**Config Parameters:** 
-
--  id:
--  title:
--  margin:
-
-**Data connection to TM1:**\ OPTIONAL
-
-**Code example:**
-
-**Data repository specifics:**
-
--  state query or init query. If no items used query is init then:
-
-   -  **parsingControl type:** list or object (in case of
-      PicklistValues)
-
-      -  name
-      -  on
-
--  choose query:
-
-   -  optional query, that will be fired every time, once an element is
-      selected or deselected
-
-File Upload Widget
-------------------
-
-**Description:** 
-
-**Example:**
-
-**Config Parameters:** 
-
--  backgroundColor:
--  borderColor:
--  borderWidth:
--  cornerRadius:
--  dividerWidth:
--  effect:
--  fontBold:
--  fontColor:
--  fontSize:
--  gradient:
--  icon:
--  iconHeight:
--  iconPosition:
--  iconWidth:
--  label:
--  maxFileSize:
--  progressVisible:
--  staging:
--  skin:
--  target:
--  uploadSuccessMessage:
--  showUploadSuccessMessage:
-
-**Data connection to TM1:**
-
-**Data repository specifics:**
-
--  **1 init query:**
-
-   -  **query for data Structure: {values: [x, y, z], labels:,
-      minRange:, maxRange:}**
-   -  **parsingControl type: matrix**
-
-
-Gauge Widget
-------------
+GaugeWidget
+-----------
 
 **Description:** A gauge chart primary used in executive dashboard
 reports to show KPI-s.
@@ -572,7 +496,7 @@ reports to show KPI-s.
    -  **parsingControl type: matrix**
        
 
-Grid Cell Widget
+GridCellWidget
 ----------------
 
 **Description:** Logical widget type representing one cell of a
@@ -598,9 +522,9 @@ GridRowWidget
 
 **Data connection to TM1:**\ NO
 
-.. _section-3:
 
-Grid Row Widget
+GridRowWidget
+-------------
 
 **Description:** Logical widget type representing one row of a
 GridWidget
@@ -629,7 +553,7 @@ GridWidget
 
 **Data connection to TM1:**\ NO
 
-Grid Table Cell Widget
+GridTableCellWidget
 ----------------------
 
 **Description:** Logical widget type representing one cell of a
@@ -644,29 +568,36 @@ followingtypes text, textbox, dropBox, slider, toggle, datepicker  
 
 **Config Parameters:** 
 
--  alignment:
 -  borderLeft:
 -  borderRight:
 -  cellBackgroundColor
 -  cellVisible:
--  cellId:
 -  cellSkin:
 -  cellWidth:
--  paddingRight:
 -  cellPaddingRight:
 -  cellPaddingLeft:
--  paddingLeft:
--  width:
 -  skin\ **:** skin of the widget
--  alignment\ **:** alignment of the widget (dropbox)
+-  alignment\ **:** string, default center-center alignment of the contained widget (dropbox)
+     - top-left
+     - center-left
+     - bottom-left
+     - top-center
+     - center-center
+     - bottom-center
+     - top-right
+     - center-right
+     - bottom-right
+     - top-space-between
+     - center-space-between
+     - bottom-space-between
 -  borderLeft\ **:** if widget has a left border (flag)
 -  borderRight\ **:** if widget has a right border (flag)
 
 **Data connection to TM1:**\ NO
 
-.. _section-4:
 
-Grid Table Header Cell Widget
+GridTableHeaderCellWidget
+-------------------------
 
 **Description:** Logical widget type representing one cell of a
 GridTableHeaderRowWidget.
@@ -704,9 +635,9 @@ GridTableHeaderRowWidget.
 
 **Data connection to TM1:**\ NO
 
-.. _section-5:
 
-Grid Table Header Row Widget
+GridTableHeaderRowWidget
+------------------------
 
 **Description:**  A technical sub-widget built specifically for the
 GridTableWidget. It provides the ability to make and customize a header
@@ -728,9 +659,9 @@ GridTableHeaderCellWidgets.
 
 **Data connection to TM1:** NO
 
-.. _section-6:
 
-Grid Table Widget
+GridTableWidget
+---------------
 
  
 
@@ -749,7 +680,6 @@ widget (except for the header row).
 
 **Config Parameters:** 
 
--  width: width of the widget
 -  hideIfNoData:
 -  skin: Selected skin of widget
 -  maxRows:
@@ -759,7 +689,6 @@ widget (except for the header row).
 -  borderBottom\ **:** true or false, toggle the bottom border
    visibility of the table
 -  rowHeight\ **:** toggle the height of the row
--  allowFullContentUpdated
 
 **Data connection to TM1:**\ YES
 
@@ -773,9 +702,9 @@ widget (except for the header row).
    parsing
 -  cell background color: cellBackgroundColor parameter in parsing
 
-.. _section-7:
 
-Grid Widget
+GridWidget
+----------
 
 **Description:** Logical widget type to contain other widgets arranged
 in an orthogonal grid. 
@@ -786,12 +715,6 @@ in an orthogonal grid. 
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
--  width\ **:** width of the widget (in % or px)
--  visible\ **:**  if widget visible (flag)
 -  skin\ **:** skin of the widget
 -  listen\ **:** {event, method} events for the widget listen to and
    method to do
@@ -799,7 +722,7 @@ in an orthogonal grid. 
 **Data connection to TM1:**\ NO
 
 
-Histogram Combo Chart Widget
+HistogramComboChartWidget
 ----------------------------
 
 **Description:** A combination chart which combines the features of a
@@ -813,51 +736,44 @@ histogram and a line chart.
 
 -  **id:** Widget Id which used for reference in framework
 -  type\ **:** Type of Widget
-
-   -  zoomable\ **:** If the widget can be enlarged
-   -  title\ **:** title of the widget
-   -  datasetHistogram\ **:** dataset of the histogram
-   -  datasetsLine\ **:** dataset of the line(s)
-   -  width\ **:** width of the widget
-   -  height\ **:** height of the widget
-   -  listen\ **:** {event, method} events for the widget listen to and
+-  zoomable\ **:** If the widget can be enlarged
+-  title\ **:** title of the widget
+-  datasetHistogram\ **:** dataset of the histogram
+-  datasetsLine\ **:** dataset of the line(s)
+-  listen\ **:** {event, method} events for the widget listen to and
       method to do
-   -  xAxesGridLinesDisplay\ **:** true or false, display the x axes
+-  xAxesGridLinesDisplay\ **:** true or false, display the x axes
       grid lines
-   -  xAxesGridLinesColor\ **:** color of the x axes grid lines
-   -  xAxesTicksFontSize\ **:** size of the x axes ticks
-   -  xAxesTicksFontFamily\ **:** font family of the x axes ticks
-   -  xAxesTicksFontStyle\ **:** font style of the x axes ticks
-   -  xAxesTicksFontColor\ **:**  color of the x axes ticks
-   -  yAxesDisplay\ **:**\ true or false, display the y axes
-   -  yAxesGridLinesDisplay\ **:**   true or false, display the y axes
+-  xAxesGridLinesColor\ **:** color of the x axes grid lines
+-  xAxesTicksFontSize\ **:** size of the x axes ticks
+-  xAxesTicksFontFamily\ **:** font family of the x axes ticks
+-  xAxesTicksFontStyle\ **:** font style of the x axes ticks
+-  xAxesTicksFontColor\ **:**  color of the x axes ticks
+-  yAxesDisplay\ **:**\ true or false, display the y axes
+-  yAxesGridLinesDisplay\ **:**   true or false, display the y axes
       grid lines
-   -  yAxesGridLinesColor\ **:** color of the y axes grid lines
-   -  yAxesTicksFontSize\ **:** size of the y axes ticks
-   -  yAxesTicksFontFamily\ **:** font family of the y axes ticks
-   -  yAxesTicksFontStyle\ **:** font style of the y axes ticks 
-   -  yAxesTicksFontColor\ **:**  color of the y axes ticks
-   -  xAxesLabelFontFamily\ **:** font family of x axes label
-   -  xAxesLabelFontColor\ **:** color of the x axes label
-   -  yAxesLabelFontFamily\ **:** font family y axes label
-   -  yAxesLabelFontColor\ **:** color of the y axes label
-   -  yAxisStacked\ **:**  stack datasets on Y axes
-   -  xAxisLabel\ **:** label of the x axis
-   -  yAxisLabel\ **:** y axis label
-   -  histYAxisBufferTop\ **:** buffer on the top of the maximum value
+-  yAxesGridLinesColor\ **:** color of the y axes grid lines
+-  yAxesTicksFontSize\ **:** size of the y axes ticks
+-  yAxesTicksFontFamily\ **:** font family of the y axes ticks
+-  yAxesTicksFontStyle\ **:** font style of the y axes ticks 
+-  yAxesTicksFontColor\ **:**  color of the y axes ticks
+-  xAxesLabelFontFamily\ **:** font family of x axes label
+-  xAxesLabelFontColor\ **:** color of the x axes label
+-  yAxesLabelFontFamily\ **:** font family y axes label
+-  yAxesLabelFontColor\ **:** color of the y axes label
+-  yAxisStacked\ **:**  stack datasets on Y axes
+-  xAxisLabel\ **:** label of the x axis
+-  yAxisLabel\ **:** y axis label
+-  histYAxisBufferTop\ **:** buffer on the top of the maximum value
       (%) on the histogram
-   -  histYAxisBufferBottom\ **:** buffer on the bottom of the minimum
+-  histYAxisBufferBottom\ **:** buffer on the bottom of the minimum
       value (%) on the histogram
-   -  lineYAxisBufferTop\ **:** buffer on the top of the maximum value
+-  lineYAxisBufferTop\ **:** buffer on the top of the maximum value
       (%) on the line
-   -  lineYAxisBufferBottom\ **:** buffer on the bottom of the minimum
+-  lineYAxisBufferBottom\ **:** buffer on the bottom of the minimum
       value (%) on the line
-   -  yAxesGridLinesNum\ **:** number of grid line on Y axes
-   -  marginLeft\ **:** pixel count of margin position
-   -  marginRight\ **:** pixel count of margin position
-   -  marginTop\ **:** pixel count of margin position
-   -  marginBottom\ **:** pixel count of margin position
-   -  widgets\ **:** segmentedBar widget ID (see on figure)
+-  yAxesGridLinesNum\ **:** number of grid line on Y axes
+-  widgets\ **:** segmentedBar widget ID (see on figure)
 
 **Data connection to TM1:** YES
 
@@ -874,9 +790,9 @@ line point, y: height of histogram bar/y value of line point}
 
 **parsingControl type:** matrix
 
-.. _section-8:
 
-Horizontal Table Widget
+HorizontalTableWidget
+---------------------
 
 **Description:** A table-type widget for displaying data in rows and
 columns. Includes some limited interactive functionality (buttons,
@@ -890,13 +806,16 @@ search field), but the content of the cells is read-only.
 
 **Config Parameters:** 
 
--  columnTypes:
+-  columnNames: list of column name: ['column1', 'column2',...]
+-  columnTypes: list of column type: ['int', 'string',...]
+-  columnWidths: list of column width(pixel): ['200', '300',...]
 -  searchField\ **:** toggle Search widget component visibility
 -  selectFirst:
 -  fadeOutNum\ **:** max displayed rows without scrolling, default 10
 -  hideIfNoData:
 -  multiselect:
 -  skin\ **:** skin of the widget
+-  selectedRowBackgroundColor
 
 **Data connection to TM1:**\ YES
 
@@ -917,7 +836,7 @@ search field), but the content of the cells is read-only.
       return {active: true}
 
 
-Image Widget
+ImageWidget
 ------------
 
 **Description:** This widget is used for displaying images and photos.
@@ -936,7 +855,7 @@ Image Widget
 **Data connection to TM1:** NO
 
 
-Line Area Chart Widget
+LineAreaChartWidget
 ----------------------
 
 |image32|
@@ -949,22 +868,12 @@ Line Area Chart Widget
 
 -  id\ **:** widget id which used for reference in framework
 -  type: Type of Widget
--  width: width: 800 or 20%
--  height: height: 500 or 25%
 -  title: Widget title text
 -  listen: {event, method} events for the widget listen to and method to
    do
 -  datasets: [{legendLabel: string, borderColor: string, borderWidth:
    int, backgroundColor: string, fill: boolean, lineTension: float,
    pointRadius: int},…]
--  marginLeft\ **:** pixel count of margin position
--  marginRight\ **:** pixel count of margin position
--  marginTop\ **:** pixel count of margin position margin
--  marginBottom\ **:** pixel count of margin position
--  paddingLeft\ **:** pixel count of padding position
--  paddingRight\ **:** pixel count of padding position
--  paddingTop\ **:** pixel count of padding position
--  paddingBottom\ **:** pixel count of padding position
 -  legendSkin\ **:** Selected skin of widget
 -  xAxesLabel\ **:** label of X axes
 -  xAxesDisplay\ **:** true or false,, default true, display the x axes
@@ -1026,9 +935,9 @@ Line Area Chart Widget
 
 **parsingControl type:** matrix
 
-.. _section-9:
 
-Line Scatter Combo
+LineScatterComboWidget
+----------------------
 
 **Description:** A combination chart which combines the features of a
 scatter plot diagram and a line chart.
@@ -1041,17 +950,13 @@ scatter plot diagram and a line chart.
 
 -  datasets:
 -  legendVisible:
--  paddingTop:
--  paddingRight:
--  paddingBottom:
--  paddingLeft:
 -  tooltipsEnabled:
 -  tooltipsMode:
 -  aspectRatio:
 -  maintainAspectRatio:
 
 
-Page Widget
+PageWidget
 -----------
 
 **Description:** Logical widget type to contain every widget that are
@@ -1072,9 +977,8 @@ displayed in a single page. 
 
 **Data connection to TM1:**\ NO
 
-.. _section-10:
-
-Panel Widget
+PanelWidget
+-----------
 
 **Description:** Logical widget type for containing other widgets. A
 legacy widget type from the 1.0 version of the framework (currently the
@@ -1084,16 +988,6 @@ GridWidget provides the same functionality.
 
 -  id\ **:** Widget Id which used for reference in framework
 -  type\ **:** Type of Widget
--  visible: contains all widgets on the page
--  height: height of widget
--  marginBottom: pixel count of margin position
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  paddingBottom: pixel count of padding position
--  paddingLeft: pixel count of padding position
--  paddingRight: pixel count of padding position
--  paddingTop: pixel count of padding position
 -  widgets: widget list, contains all widget on selected page
 -  width: width of widget
 -  listen: {event, method} events for the widget listen to and method to
@@ -1102,9 +996,9 @@ GridWidget provides the same functionality.
 
 **Data connection to TM1:** NO
 
-.. _section-11:
 
-Pie Chart Widget
+PieChartWidget
+--------------
 
 **Description:** A standard pie chart to show relative sizes of data.
 
@@ -1118,9 +1012,6 @@ Pie Chart Widget
 
 -  id\ **:** Widget Id which used for reference in framework
 -  type\ **:** Type of Widget
--  visible: toggle visibility of the widget
--  width: width of widget
--  height\ **:** height of widget
 -  canvasHeight:
 -  canvasWidth:
 -  data:
@@ -1158,24 +1049,19 @@ label:,backgroundColor:,borderWidth:,borderColor:}
 
 example response:
 
-               [
+.. code-block:: json
 
-                        {value: 78, label: ‘A’, backgroundColor:
-‘#ffb3cc’, borderWidth: 2, borderColor: ‘red’},
-
-                        {value: 35, label: ‘B’, backgroundColor:
-‘#80dfff’, borderWidth: 2, borderColor: ‘blue’},
-
-                        {value: 19, label: ‘C’, backgroundColor:
-‘#80ff80’, borderWidth: 2, borderColor: ‘green’}
-
-              ]
+    [
+        {value: 78, label: 'A', backgroundColor:'#ffb3cc', borderWidth: 2, borderColor: 'red'},
+        {value: 35, label: 'B', backgroundColor:'#80dfff', borderWidth: 2, borderColor: 'blue'},
+        {value: 19, label: 'C', backgroundColor:'#80ff80', borderWidth: 2, borderColor: 'green'}
+    ]
 
 this data generates the following pie chart:
 
 |image38|
 
-PivotTable Widget
+PivotTableWidget
 -----------------
 
 **Description:** 
@@ -1196,41 +1082,8 @@ PivotTable Widget
 
 **Data repository specifics:**
 
-Popup Widget
-------------
 
-**Description:** 
-
-**Example**:
-
-**Config Parameters:** 
-
--  id\ **:** Widget Id which used for reference in framework
--  anchor:
--  anchorOnClick:
--  anchorVisible:
--  backdrop:
--  bgColor:
--  bgScrollable:
--  closeBtn:
--  closeOnClickBackdrop:
--  fixed:
--  heightFixed:
--  heightStr:
--  offset:
--  position:
--  positionAndCalculateSpace:
--  skin:
--  fadingSpeed:
--  visible:
--  widthStr:
-
-**Data connection to TM1:** YES
-
-**Data repository specifics:**
-
-
-Radar Chart Widget
+RadarChartWidget
 ------------------
 
 **Description:** A radar chart is a way of showing multiple data points
@@ -1303,7 +1156,7 @@ points of two or more different data sets.
    1. query for data Structure: {value:}
    2. parsingControl type: matrix
 
-Radio Button Row Widget
+RadioButtonRowWidget
 -----------------------
 
 **Description:** A sub-widget built specifically for the
