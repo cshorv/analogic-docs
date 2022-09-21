@@ -16,18 +16,13 @@ The function of widget-config.js
 -  listen is a valid parameter in all widget types, structure of listen:
    [{event, method, (parameter)}…]
 
-methods:
+Methods
 --------
 
 -  refresh
 -  refreshWithWaitingForEvent: waits for specified event in parameter
 -  parameter is valid only for method refreshWithWaitingForEvent
 
-Content
--------
-
-A
-~
 
 Action Button Row Widget
 ------------------------
@@ -65,8 +60,6 @@ end of the rows.
    -  only url, body and type settings are used, parsingControl settings
       is not available
 
-B
-~
 
 Bubble Chart Widget
 -------------------
@@ -143,8 +136,6 @@ labelled with both texts and icons.
 -  only url, body and type settings are used. parsingControl settings is
    not available.
 
-C
-~
 
 Combo Chart Widget
 ------------------
@@ -296,6 +287,7 @@ bar chart and a line chart.
 **parsingControl type:** matrix
 
 Container Widget
+----------------
 
 **Description:** A logical widget that allows the creation of
 multi-layered applications. A ContainerWidget provides the same
@@ -333,9 +325,6 @@ popup)
 -  fadingSpeed:
 
 **Data connection to TM1:** NO
-
-D
-~
 
 Date Picker Widget
 ------------------
@@ -510,9 +499,6 @@ Droppable Widget
    -  optional query, that will be fired every time, once an element is
       selected or deselected
 
-F
-~
-
 File Upload Widget
 ------------------
 
@@ -555,8 +541,6 @@ File Upload Widget
       minRange:, maxRange:}**
    -  **parsingControl type: matrix**
 
-G
-~
 
 Gauge Widget
 ------------
@@ -820,8 +804,6 @@ in an orthogonal grid. 
 
 **Data connection to TM1:**\ NO
 
-H
-~
 
 Histogram Combo Chart Widget
 ----------------------------
@@ -940,8 +922,6 @@ search field), but the content of the cells is read-only.
       {value: r.Cells[x].FormattedValue, editable: false, ordinal: x};
       return {active: true}
 
-I
-~
 
 Image Widget
 ------------
@@ -961,8 +941,6 @@ Image Widget
 
 **Data connection to TM1:** NO
 
-L
-~
 
 Line Area Chart Widget
 ----------------------
@@ -1078,8 +1056,6 @@ scatter plot diagram and a line chart.
 -  aspectRatio:
 -  maintainAspectRatio:
 
-P
-~
 
 Page Widget
 -----------
@@ -1259,8 +1235,6 @@ Popup Widget
 
 **Data repository specifics:**
 
-R
-~
 
 Radar Chart Widget
 ------------------
@@ -1370,8 +1344,6 @@ selecting rows of the HorizontalTableWidget
    -  only url, body and type settings are used, parsingControl settings
       is not available
 
-S
-~
 
 Scroll Table Widget
 -------------------
@@ -2064,8 +2036,6 @@ rightColor:, legendLabel:}
 
  matrix
 
-V
-~
 
 Vertical Line Box Widget
 ------------------------
@@ -2103,8 +2073,6 @@ Vertical Line Box Widget
    1. **query for data Structure: {value:}**
    2. **parsingControl type: matrix**
 
-W
-~
 
 Waterfall Widget
 ----------------
