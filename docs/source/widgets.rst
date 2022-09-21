@@ -26,14 +26,16 @@ Methods
 Common Parameters
 -----------------
 
--  paddingTop\ **:** pixel count of padding position
--  paddingRight\ **:** pixel count of padding position
--  paddingBottom\ **:** pixel count of padding position
--  paddingLeft\ **:** pixel count of padding position
--  marginTop\ **:** pixel count of padding position
--  marginRight\ **:** pixel count of padding position
--  marginBottom\ **:** pixel count of padding position
--  marginLeft\ **:** pixel count of padding position
+-  marginTop\ **:** pixel count or percent of padding position
+-  marginRight\ **:** pixel count or percent of padding position
+-  marginBottom\ **:** pixel count or percent of padding position
+-  marginLeft\ **:** pixel count or percent of padding position
+-  paddingTop\ **:** pixel count or percent of padding position
+-  paddingRight\ **:** pixel count or percent of padding position
+-  paddingBottom\ **:** pixel count or percent of padding position
+-  paddingLeft\ **:** pixel count or percent of padding position
+-  width
+-  height
 
 
 ActionButtonRowWidget
@@ -136,7 +138,9 @@ bar chart and a line chart.
 
 -  data:
 -  datasets:
+
 .. code-block:: json
+
    {
         type:string,
         label:string,
@@ -146,7 +150,8 @@ bar chart and a line chart.
         borderWidth:int,
         fill:boolean,
         stack:int
-    }
+   }
+
 -  tooltipsEnabled\ **:** true or false, parameters of dataset are shown
    on mouse hover
 -  tooltipsMode\ **:** mode of hover tooltip menu
