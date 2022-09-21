@@ -23,9 +23,21 @@ Methods
 -  refreshWithWaitingForEvent: waits for specified event in parameter
 -  parameter is valid only for method refreshWithWaitingForEvent
 
+Common Parameters
+-----------------
 
-Action Button Row Widget
-------------------------
+-  paddingTop\ **:** pixel count of padding position
+-  paddingRight\ **:** pixel count of padding position
+-  paddingBottom\ **:** pixel count of padding position
+-  paddingLeft\ **:** pixel count of padding position
+-  marginTop\ **:** pixel count of padding position
+-  marginRight\ **:** pixel count of padding position
+-  marginBottom\ **:** pixel count of padding position
+-  marginLeft\ **:** pixel count of padding position
+
+
+ActionButtonRowWidget
+---------------------
 
 **Description:** A sub-widget built specifically for the
 HorizontalTableWidget. It provides action button functionality at the
@@ -51,45 +63,16 @@ end of the rows.
 -  state or init query if HorizontalTableWidget data feed from TM1 and
    any action defined in widget-config:
 
-   -  the query is part of its parent Horizontal table query
+-  the query is part of its parent Horizontal table query
 
-      -  active
+-  active
 
 -  choose query:
 
-   -  only url, body and type settings are used, parsingControl settings
+-  only url, body and type settings are used, parsingControl settings
       is not available
 
-
-Bubble Chart Widget
--------------------
-
-**Description:** A bubble chart is used to display three dimensions of
-data at the same time. The location of the bubble is determined by the
-first two dimensions and the corresponding horizontal and vertical axes.
-The third dimension is represented by the size of the individual
-bubbles.
-
-**Example**:
-
-**Config Parameters:** 
-
--  dataset: label: string, title: string, subtitle: string, max: float,
-   min: float, xlabel: string
--  color: color of the background
--  bubbleWidth: bubble border width (in pixels).
--  bubbleWidthRatio:
--  width: width of the widget
-
-**Data connection to TM1:** OPTIONAL 
-
-**Data repository specifics:**
-
--  optional launch query, that can launch for example processes.
--  only url, body and type settings are used. parsingControl settings is
-   not available.
-
-Button Widget
+ButtonWidget
 -------------
 
 **Description:** With this widget users can make actions (e.g. opening a
@@ -137,7 +120,7 @@ labelled with both texts and icons.
    not available.
 
 
-Combo Chart Widget
+ComboChartWidget
 ------------------
 
 **Description:** A chart widget that allows to combine the features of a
@@ -153,11 +136,17 @@ bar chart and a line chart.
 
 -  data:
 -  datasets:
-   {type:string,label:string,borderColor:string,backgroundColor:string,pointRadius:int,borderWidth:int,fill:boolean,stack:int}
--  paddingTop\ **:** pixel count of padding position
--  paddingRight\ **:** pixel count of padding position
--  paddingBottom\ **:** pixel count of padding position
--  paddingLeft\ **:** pixel count of padding position
+.. code-block:: json
+   {
+        type:string,
+        label:string,
+        borderColor:string,
+        backgroundColor:string,
+        pointRadius:int,
+        borderWidth:int,
+        fill:boolean,
+        stack:int
+    }
 -  tooltipsEnabled\ **:** true or false, parameters of dataset are shown
    on mouse hover
 -  tooltipsMode\ **:** mode of hover tooltip menu
