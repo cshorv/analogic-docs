@@ -1192,7 +1192,7 @@ selecting rows of the HorizontalTableWidget
       is not available
 
 
-Scroll Table Widget
+ScrollTableWidget
 -------------------
 
 **Description:** A table-type widget for displaying data in rows and
@@ -1208,21 +1208,10 @@ columns. It provides Excel-like functionality including editing cells 
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  visible\ **:** if widget visible (flag)
 -  headerWidth\ **:** width of header in pixel
--  height\ **:** number of height in pixel
 -  format\ **:** W-B-N format for default formatting
 -  startYear\ **:** Name of the starting year in numbers
 -  endYear\ **:** Name of the ending year in numbers
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
--  paddingLeft\ **:** left padding of the widget
--  paddingRight\ **:** right padding of the widget
--  paddingTop\ **:** top padding of the widget
--  paddingBottom\ **:** bottom padding of the widget
--  width\ **:** width of the widget (in % or px)
 -  **ribbons (hidden in current version):**
 
    -  bar1:  {name, textColor, backgroundColor}
@@ -1259,9 +1248,9 @@ Data repository specifics (Comment functionality working with 2 special
 event commentEdit and commentShow, these events transfer the clicked
 scroll table row information to the comment container’s widgets).
 
-.. _section-12:
 
-Segmented Bar Widget
+SegmentedBarWidget
+------------------
 
 **Description:** A special multi-section bar chart widget primary used
 for statistical analysis
@@ -1278,13 +1267,6 @@ for statistical analysis
 -  type\ **:** Type of Widget
 -  hideIfNoData\ **:** boolean if true the widget will hide with empty
    content
--  visible: if widget visible (flag)
--  width: width of the button (%), if hasLayout == true, default: 50%
--  height\ **:** height of widget
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  marginBottom: pixel count of margin position
 -  listen: {event, method} events for the widget listen to and method to
    do
 -  skin: Selected button skin
@@ -1300,9 +1282,8 @@ for statistical analysis
    -  **query for data Structure: {value:}**
    -  **parsingControl type: matrix**
 
-.. _section-13:
 
-Segmented Control Item Widget
+SegmentedControlItemWidget
 
 **Description:** Logical widget type to represent the
 SegmentedControlWidget options. 
@@ -1313,11 +1294,6 @@ SegmentedControlWidget options. 
 
 -  id\ **:** Widget Id which used for reference in framework
 -  type\ **:** Type of Widget
--  width: width of segmented conrol item
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  marginBottom: pixel count of margin position
 -  skin: Selected skin of widget
 -  value\ **:**  ‘1’ if the default value is ON, and ‘0’ if the default
    vaule is OFF
@@ -1329,9 +1305,8 @@ SegmentedControlWidget options. 
 
 **Data connection to TM1:** NO
 
-.. _section-14:
 
-Segmented Control Widget
+SegmentedControlWidget
 
 **Description**: This widget is used to switch between displaying
 different sets of data.
@@ -1346,22 +1321,17 @@ different sets of data.
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
--  visible\ **:** if widget visible
 -  skin\ **:** skin of the widget
--  width\ **:** width of segmented control in %
 -  listen\ **:** {event, method} events for the widget listen to and
    method to do
 
 **Data connection to TM1:**\ NO 
 
-Shadow Widget
+ShadowWidget
 -------------
 
 **Description**: 
+
 
 **Example**:
 
@@ -1369,7 +1339,7 @@ Shadow Widget
 
 **Data connection to TM1:**\ NO 
 
-Simulation Panel Widget
+SimulationPanelWidget
 -----------------------
 
 **Description**: 
@@ -1380,19 +1350,13 @@ Simulation Panel Widget
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
--  visible\ **:** if widget visible
 -  skin\ **:** skin of the widget
--  width\ **:** width of segmented control in %
 -  listen\ **:** {event, method} events for the widget listen to and
    method to do
 
 **Data connection to TM1:**\ NO 
 
-Simulation Panel Slider Widget
+SimulationPanelSliderWidget
 ------------------------------
 
 **Description**: 
@@ -1403,11 +1367,6 @@ Simulation Panel Slider Widget
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
--  visible\ **:** if widget visible
 -  minValue:
 -  maxValue:
 -  currentValue:
@@ -1417,60 +1376,9 @@ Simulation Panel Slider Widget
 
 **Data connection to TM1:**\ NO 
 
-.. _section-15:
 
-Slider_old Widget
 
-**Description:** This widget allows users to set or adjust a value.  
-
-|image48|
-
-**Example:**
-
-|image49|
-
-**Config Parameters:** 
-
--  id\ **:** Widget Id which used for refeerence in framework
--  type: Type of Widget
--  width: width of the button (%), if hasLayout == true, default: 50%
--  height\ **:** height of the button
--  hideIfNoData: boolean if true the widget will hide with empty content
--  largeIncrement: The larger value you can increase
--  listen: {event, method} events for the widget listen to and method to
-   do
--  marginBottom: pixel count of margin position
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  maxRange\ **:** Maximal value
--  minRange\ **:** Minimal value
--  skin: Selected skin of the widget
--  smallIncrement\ **:** The smaller value you can increase
--  title\ **:** title of the widget
--  trackValueFontColor: color of the track value label font
--  trackValueFontSize: size of the track value label font
--  trackValueMagnifierLabelFontColor: color of the magnifier label font
--  trackValueMagnifierLabelFontSize: size of the magnifier label font
--  value: default value of slider
--  visible: if widget visible (flag)
-
-**Data connection to TM1:**\ YES
-
-**Data repository specifics:**
-
--  state or init query if data feed from TM1:
-
-   -  **parsingControl type:** matrix
-
-      -  cols
-      -  minValue
-      -  maxValue
-      -  currentValue
-      -  unit
-      -  ordinal
-
-Slider Widget
+SliderWidget
 -------------
 
 **Description:** This widget allows users to set or adjust a value.  
@@ -1484,15 +1392,10 @@ Slider Widget
 -  id\ **:** Widget Id which used for refeerence in framework
 -  type: Type of Widget
 -  width: width of the button (%), if hasLayout == true, default: 50%
--  height\ **:** height of the button
 -  hideIfNoData: boolean if true the widget will hide with empty content
 -  largeIncrement: The larger value you can increase
 -  listen: {event, method} events for the widget listen to and method to
    do
--  marginBottom: pixel count of margin position
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
 -  maxRange\ **:** Maximal value
 -  minRange\ **:** Minimal value
 -  skin: Selected skin of the widget
@@ -1524,45 +1427,9 @@ Slider Widget
       -  unit
       -  ordinal
 
-Swipe Widget
-------------
-
-**Description**: 
-
-**Example**:
-
-**Config Parameters:** 
-
--  id\ **:** widget id which used for reference in framework
--  backdrop:
--  bgColor:bgScrollable:
--  closeBtn:
--  closedSizeStr:
--  fixed:
--  heightStr:
--  pinned:
--  position:
--  skin:
--  fadingSpeed:
--  widthStr:
-
-**Data connection to TM1:**\ NO
-
-System Popup Widget(?)
-----------------------
-
-**Description**: 
-
-**Example**:
-
-**Config Parameters:** 
-
--  id\ **:** widget id which used for reference in framework
-
-**Data connection to TM1:**\ NO
 
 
-Text Area Widget
+TextAreaWidget
 ----------------
 
 **Description:** This widget is used for entering multiple lines of
@@ -1578,13 +1445,6 @@ text. The widget is resizable by bottom right corner drag and drop
 
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
--  height\ **:** text title height
--  height: height of widget
--  margin: right margin (flag)
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  marginBottom: pixel count of margin position
 -  listen: {event, method} events for the widget listen to and method to
    do
 -  skin: Selected skin of widget:
@@ -1616,9 +1476,9 @@ text. The widget is resizable by bottom right corner drag and drop
       -  text
       -  ordinal
 
-.. _section-16:
 
-Text Box Widget
+TextBoxWidget
+-------------
 
 **Description:** This widget is used for entering a single line of text.
 
@@ -1632,16 +1492,10 @@ Text Box Widget
 
 -  id\ **:** widget ID used for reference in framework
 -  type\ **:** type of widget
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
 -  titleFontSize\ **:** font size of the title
 -  titleFontColor\ **:** font color of the title
 -  textFontSize\ **:** font size of the text
 -  textFontColor\ **:** font color of the text
--  width\ **:** width of the widget (in % or px)
--  height\ **:** height of the widget (in % or px)
 -  title\ **:** title of the textbox
 -  titleVisible\ **:** if widget title visible (flag)
 -  defaultText\ **:** shown by default in an empty cell, like a hint for
@@ -1688,9 +1542,8 @@ Text Box Widget
 
 |image55|
 
-.. _section-17:
-
-Text Widget
+TextWidget
+----------
 
 **Description:** This widget is used to display text
 
@@ -1712,8 +1565,6 @@ Text Widget
 -  iconWidth:
 -  title\ **:** title of the widget
 -  body\ **:** text in the body of the widget
--  width\ **:** width of the widget (in % or px)
--  height\ **:** height of the widget
 -  titleFontSize\ **:** size of the text in the title
 -  titleFontColor\ **:** color of the text in the title
 -  titleBackgroundColor:
@@ -1724,10 +1575,6 @@ Text Widget
 -  bodyBackgroundColor:
 -  bodyCursor:
 -  bodyFontWeight:
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
 -  skin\ **:** skin of the widget
 -  titleAlignment\ **:** alignment of the title
 -  bodyAlignment\ **:** the alignment of the text in the body
@@ -1737,8 +1584,6 @@ Text Widget
 -  ordinal:
 -  listen\ **:** {event, method} events for the widget listen to and
    method to do
--  depends: only in GridTable, listen to a widget in another column of
-   the table (eg. [{col: 2, action: ‘slide’}])
 
 **Data connection to TM1:**\ OPTIONAL
 
@@ -1754,9 +1599,9 @@ Text Widget
 
 |image58|
 
-.. _section-18:
 
-Toggle Widget
+ToggleWidget
+------------
 
 **Description**: The purpose of this widget is to permit the user to
 make a binary choice, i.e. a choice between one of two possible mutually
@@ -1778,19 +1623,10 @@ exclusive options. (for example: on-off choice)
 -  confirmMessage: what confirm message should pop up
 -  groupId: ID of the connected toggle’s, each toggle has to be refer to
    the same group naming
--  height: height of the widget
 -  icon: selected icon of toggle when ON
 -  iconOff: selected icon of toggle when OFF
 -  listen: {event, method} events for the widget listen to and method to
    do
--  marginBottom: pixel count of margin position
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  paddingBottom: bottom padding of the widget
--  paddingLeft: left padding of the widget
--  paddingRight: right padding of the widget
--  paddingTop: top padding of the widget
 -  skin: Selected button skin
 -  titleFontColor: color of the button label font
 -  titleFontSize: size of the button label font
@@ -1824,9 +1660,9 @@ exclusive options. (for example: on-off choice)
 -  only url, body and type settings are used. parsingControl settings is
    not available
 
-.. _section-19:
 
-Tornado Chart Widget
+TornadoChartWidget
+------------------
 
 **Description:** A special bar chart widget used for sensitivity
 analysis
@@ -1840,17 +1676,11 @@ analysis
 -  id\ **:** widget id which used for reference in framework
 -  type\ **:** type of widget
 -  title\ **:** title of the widget
--  width\ **:** width of the widget (in % or px)
--  height\ **:** height of the widget
 -  xAxisLabel\ **:** label of the x-axis
 -  baseValue\ **:** base value of the chart
 -  xMin\ **:** minimum value of the x-axis
 -  xMax\ **:** maximum value of the x-axis
 -  range\ **:** range of the chart (= xMax - xMin)
--  marginLeft\ **:** left margin
--  marginRight\ **:** right margin
--  marginTop\ **:** top margin
--  marginBottom\ **:** bottom margin
 -  zoomable\ **:** if the widget can be enlarged (flag)
 -  skin\ **:** skin of the widget
 -  dataset\ **:** $.extend(true, o.dataset \|\| [], data.dataset \|\|
@@ -1884,7 +1714,7 @@ rightColor:, legendLabel:}
  matrix
 
 
-Vertical Line Box Widget
+VerticalLineBoxWidget
 ------------------------
 
 **Description:** Sub-widget of LineAreaChartWidget
@@ -1897,13 +1727,6 @@ Vertical Line Box Widget
 
 -  id\ **:** Widget Id which used for reference in framework
 -  type\ **:** Type of Widget
--  visible: if widget visible (flag)
--  width: width of the button (%), if hasLayout == true, default: 50%
--  height\ **:** height of widget
--  marginLeft: pixel count of margin position
--  marginRight: pixel count of margin position
--  marginTop: pixel count of margin position
--  marginBottom: pixel count of margin position
 -  listen: {event, method} events for the widget listen to and method to
    do
 -  dataset\ **:** [{lineVisible: boolean, lineStyle:
@@ -1921,7 +1744,7 @@ Vertical Line Box Widget
    2. **parsingControl type: matrix**
 
 
-Waterfall Widget
+WaterfallWidget
 ----------------
 
 **Description:** A chart widget used to show how a net value is arrived
@@ -1951,7 +1774,6 @@ contributions.
 -  maxYAxis\ **:** maximum value of the y-axis
 -  yAxisGridLineNum\ **:** number of horizontal grid lines
 -  yAxisDecimalNum:
--  height\ **:** height of the widget
 -  defaultColor\ **:** default color of the widget (currently #F3F4F6)
 -  skin\ **:** skin of the widget
 -  hiddenDatasets:
