@@ -1,10 +1,9 @@
 Welcome to Analagic's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+The Analogic Framework is a software development framework for building
+advanced financial planning and business simulation applications using
+the IBM Planning Analytics Engine as a database.
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
@@ -20,4 +19,4 @@ Contents
 
    usage
    widgets
-   api
+   repository

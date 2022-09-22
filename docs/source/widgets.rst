@@ -1330,7 +1330,7 @@ different sets of data.
 ShadowWidget
 -------------
 
-**Description**: 
+**Description**: This widget is not displayed. Its purpose is background data query.
 
 
 **Example**:
@@ -1383,9 +1383,13 @@ SliderWidget
 
 **Description:** This widget allows users to set or adjust a value.  
 
+|image66|
+
 **Example:**
 
 |image50|
+
+|image67|
 
 **Config Parameters:** 
 
@@ -1848,3 +1852,5 @@ contributions.
 .. |image63| image:: https://lh4.googleusercontent.com/qn0VURLVI__xeHG5ZF2Z3CwPqFnpfovccqlwok1rTVe4zI2bMApfR9QMnpFWYf9QXe0AROleB8ax39T0lvLznrRyUipFygElsfYXUh1lg2v9a7ttJrWmrj7UJa4ji2yBNNOT5VZ7
 .. |image64| image:: https://lh6.googleusercontent.com/Z47O3S4XF5QcSNokqtw0EIbJCF_B1_z625HUrAdCdFFAugqIPgXiJPBe1ijL0Qpg1s03XZrexelY5EDh27aPjuSzvBTAWauUnSx7oiOXh4FKqyeZn5Q_5q3L9_sdH5jUAZGSXyNB
 .. |image65| image:: https://lh3.googleusercontent.com/DPgcnvbo5Qut_aHamNCFazuYMp42w3ZATT1adkAGEg9W07haPd1p9cAxzDIJkQKUiHsKvJBMHy27Nyc0CEHCq8kwfvLE6Liuo3PCLbyTf2HdajbGu9GtzotF1IE7DMU3UEChXox-
+.. |image66| image:: /sliderWidget.png
+.. |image67| image:: /slider_example.png

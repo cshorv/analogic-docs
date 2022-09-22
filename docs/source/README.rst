@@ -1,10 +1,9 @@
-Usage
-=====
+Analogic
+========
 
-.. _installation:
-
-Installation
-------------
+The Analogic Framework is a software development framework for building
+advanced financial planning and business simulation applications using
+the IBM Planning Analytics Engine as a database.
 
 Project Focus
 -------------
@@ -48,7 +47,7 @@ considered samples and patterns. Your deployment setup might require
 further customizations or extensions.
 
 1. Single - Flask-based mode (``docker-compose-flask.yml``):
-
+                                                            
 
 Launches Analogic in Flask dev mode without WSGI. It is useful for the
 development of Analogic framework itself.
@@ -61,7 +60,7 @@ The ``helloanalogic`` sample application is available at
 http://localhost:5000/helloanalogic
 
 2. Single - bjoern-based mode (``docker-compose-bjoern.yml``)
-
+                                                             
 
 Launches Analogic using bjoern WSGI. More info about `bjoern
 here <https://github.com/jonashaag/bjoern>`__. It serves as a
@@ -76,7 +75,7 @@ The ``helloanalogic`` sample application is available at
 http://localhost:5000/helloanalogic
 
 3. Multi - Flask-based mode with Apache front controller (``docker-compose-bjoern-apache.yml``)
-
+                                                                                               
 
 Simulates an environment where Analogic is deployed as reverse proxy
 behind a front web server that defines URL path mappings, SSL for HTTPS,
@@ -90,7 +89,7 @@ The ``helloanalogic`` sample application is available at
 http://localhost:8080/proxy/helloanalogic
 
 4. Multi - bjoern-based mode with Apache front controller (``docker-compose-bjoern-apache.yml``)
-
+                                                                                                
 
 Simulates an environment where Analogic is deployed as reverse proxy
 behind a front web server that defines URL path mappings, SSL for HTTPS,
@@ -106,7 +105,7 @@ http://localhost:8080/proxy/helloanalogic
 --------------
 
 Dev mode
-
+        
 
 When developing in Pycharm, you may want to bind the code base as volume
 into Docker. It makes sure that any code change in your IDE will
@@ -124,7 +123,7 @@ development mode these are rarely useful.
 --------------
 
 Apache front web server setups
-
+                              
 
 Apache-based ``docker-compose-*-apahce.yml`` files mount
 ``apache-proxy.conf`` to define *vhost* redirecting calls to Analogic
@@ -155,3 +154,8 @@ the static web assets through the base url using ``mod_rewrite``
 
 Architecture
 ------------
+
+.. |CircleCI| image:: https://circleci.com/gh/KnowledgeSeed/Analogic/tree/opensource.svg?style=svg&circle-token=06a3190fab78aa16c209796996ab9c14b5edab17
+   :target: https://circleci.com/gh/KnowledgeSeed/Analogic/tree/opensource
+.. |License| image:: https://img.shields.io/:license-Apache%202-blue.svg
+   :target: https://github.com/KnowledgeSeed/Analogic/blob/opensource/LICENSE
