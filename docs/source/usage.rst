@@ -152,6 +152,3 @@ the static web assets through the base url using ``mod_rewrite``
            Allow from all
    </Location>
    ...
-
-Architecture
-------------

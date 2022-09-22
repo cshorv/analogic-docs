@@ -136,6 +136,8 @@ Init
             }
     },
 
+repository.yml
+
 .. code-block:: yaml
 
     textWidget1_init: >
@@ -264,6 +266,7 @@ InitCondition
 - if false: initDefault will be executed
 
 .. code-block:: javascript
+
     initCondition(ctx) {
         if(..) {
             return true;
@@ -293,6 +296,15 @@ Action of ButtonWidget.
     widget1: {
         launch:
             {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
                 url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
                 type: 'POST',
                 body: (ctx) => `{
@@ -328,6 +340,15 @@ Action of DropboxWidget.
     widget1: {
         choose:
             {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
                 url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
                 type: 'POST',
                 body: (ctx) => `{
@@ -344,10 +365,388 @@ Action of DropboxWidget.
         }
     }
 
+cellEdit
+------
+
+Action of HorizontalTableWidget and ScrollTableWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        cellEdit:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.cellEdit.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        cellEdit(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
 
 
+pick
+------
+
+Action of DatePickerWidget
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        pick:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.pick.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        pick(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
 
 
+pasteCells
+------
+
+Action of ScrollTableWidget
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        pasteCells:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Cellsets('${ctx.getObject().init[2].cellsetId}')/Cells`,
+                type: 'PATCH',
+                body: (ctx) => `[${v('widget1').pastedCellValues.map((t, i) => `{"Ordinal": ${t.ordinal},"Value": \"${t.value}\"}`)}]`
+            },
+    }
+
+
+switch
+------
+
+Action of SegmentedControlWidget and ToggleWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        switch:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.switch.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        switch(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
+
+
+slide
+------
+
+Action of SliderWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        slide:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.slide.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        slide(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
+
+write
+------
+
+Action of TextWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        write:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.write.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        write(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
+
+
+save
+------
+
+Action of TextAreaWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        save:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.save.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        save(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
+
+
+writeEnd
+------
+
+Action of TextBoxWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        writeEnd:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.writeEnd.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        writeEnd(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
+
+writeKey
+------
+
+Action of TextBoxWidget.
+
+**Action parameters**
+
+- url: URL of the request
+- body: body of the request
+- type: type of request (POST, GET,...)
+- validation: validation of current state. if success = false -> no request, warning message
+- server: boolean (optional, default false) if mdx stored on the server side in repository.yml
+
+.. code-block:: javascript
+
+    widget1: {
+        writeKey:
+            {
+                validation(ctx) {
+                    if(...) {
+                        return {
+                          success: false,
+                          message: 'validation failed'
+                        };
+                    }
+                    return {success: true};
+                },
+                url: (ctx) => `/api/v1/Processes('processname')/tm1.ExecuteWithReturn`,
+                type: 'POST',
+                body: (ctx) => `{
+                        "Parameters": [
+                                {"Name": "pParam1", "Value": "${ctx.activeUserName}"},
+                                {"Name": "pParam2", "Value": "${v('widget1.writeKey.value')}"}
+                        ]
+                    }`
+            },
+    },
+    widget2: {
+        writeKey(ctx) {
+            Api.updateContent('otherWidgetId');
+        }
+    }
 
 
 
