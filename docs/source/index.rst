@@ -21,3 +21,5 @@ Contents
    widgets
    repository
    eventmap
+   createapp
+   authenticationmodes
