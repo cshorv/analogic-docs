@@ -1,7 +1,7 @@
 App configuration
 =================
 
-You can configure the application in app.json. This file cache on the server side.
+You can configure the application in app.json. This file cached on the server side.
 Any modification will be applied if the content of cache folder deleted or
 http://localhost:5000/appname/clearcache called.
 
