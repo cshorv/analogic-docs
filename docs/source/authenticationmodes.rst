@@ -9,6 +9,7 @@ Cam authentication mode
 --------------------------
 
 .. code-block:: json
+
     {
       "projectName": "Your application displayed name",
       "projectId": "yourappname",
@@ -27,6 +28,7 @@ LoginBasic authentication mode
 ------------------------------
 
 .. code-block:: json
+
     {
       "projectName": "Your application displayed name",
       "projectId": "yourappname",
